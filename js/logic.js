@@ -1,11 +1,10 @@
 
 // Store our API endpoint inside queryUrl
 // Getting data of all M2.5+ earthquakes from the past week
-var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var queryUrl = d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson");
 
-// Perform a GET request to the query URL
 d3.json(queryUrl, function (data) {
-    // Once we get a response, send the data.features object to the createFeatures function
+    // console.log(data)
     createFeatures(data.features);
 });
 
